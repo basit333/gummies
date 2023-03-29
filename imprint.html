@@ -17,68 +17,63 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <!-- Main -->
-  <main class="main__container px-2">
-    <!-- hero -->
-    <hero class="hero pt-1">
-      <div class="hero__overlay--mobile"></div>
-      <div class="hero__row row rounded-top">
-        <div class="hero__content--box col-12">
-          <h2 class="hero__content--heading w-50 mx-auto text-center color--fancy">Noch nie war Abnehmen so
-            lecker.
-          </h2>
-        </div>
+<body class="bg-white">
+  <!-- Navbar -->
+  <nav class="navbar container-fluid">
+    <div class="navbar__container container-xl py-2">
+      <a class="navbar__link text-decoration-none" href="/index.html">Startseite</a>
+      <div class="navbar__img--box">
+        <a href="/index.html">
+          <img class="navbar-img img-fluid" src="/media/logo-490x200.webp" alt="slimming gummies">
+        </a>
       </div>
-    </hero>
+      <a class="navbar__link text-decoration-none navbar__link--hidden" href="#">Jetzt kaufen</a>
+    </div>
+  </nav>
 
-    <!-- Middle -->
-    <section class="middle rounded-bottom pb-4">
-      <div class="middle__row">
-        <!-- <div class="middle__content col-2">
-        </div> -->
-        <div class="middle__content middle__content--text text-center">
-          <h2 class="middle__content--heading color--fancy">Finden Sie heraus, wie viel Gewicht Sie mit einer Anwendung
-            von Slimming Gummies®
-            verlieren können</h2>
-          <p class="middle__content--subtext">Es dauert weniger als 90 Sekunden um Ihren möglichen Gewichtsverlust
-            berechnen zu lassen.</p>
-        </div>
-        <!-- <div class="middle__content col-2">
-        </div> -->
-      </div>
-      <!-- Middle media -->
-      <div class="middle__media--row row align-items-center px-2">
-        <div class="middle__media--col-3 col-3">
-          <div class="middle__media--male mx-auto">
-            <img class="middle__media--male-img" src="/media/male-img.979b4c6b.png" alt="male image">
-          </div>
-        </div>
-        <div class="middle__media--col-6 col-6 text-center">
-          <h3 class="middle__media--title">Wählen Sie Ihr Geschlecht</h3>
-          <div class="middle__media--btns d-flex align-items-center justify-content-center">
-            <div class="btn-male rounded-circle">
-              <div class="btn-male-img">
-                <img src="/media/male-icon.26bb4aa9.svg" alt="male icon">
-              </div>
-              <p class="btn-male-text">Männlich</p>
-            </div>
-            <div class="btn-female rounded-circle">
-              <div class="btn-female-img">
-                <img src="/media/female-icon.d903a167.svg" alt="female icon">
-              </div>
-              <p class="btn-female-text">Weiblich</p>
-            </div>
-          </div>
-        </div>
-        <div class="middle__media--col-3 col-3">
-          <div class="middle__media--female mx-auto">
-            <img class="middle__media--female-img" src="/media/female-img.2c14740f.png" alt="female image">
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- Imprint Header -->
+  <section class="imprint__header container">
+    <h1 class="imprint__header--main-title">Impressum & Kontakt</h1>
+    <div class="imprint__content--title">
+      <h5>Brauchen Sie Hilfe?</h5>
+    </div>
+    <div class="imprint__content--subtext">
+      <p>Unser Kundenservice ist für Sie da! Über den folgenden Link gelangen Sie zu einem Kontaktformular, um direkt
+        mit uns in Kontakt zu treten: <a href="#" class="text-decoration-none"><span
+            class="imprint__content--subtext-link">Link</span></a>
+      </p>
+    </div>
+    <div class="imprint__content--title">
+      <h5>Rücksende und Retourenadresse:</h5>
+    </div>
+    <div class="imprint__content--subtext">
+      <p>Slimming Gummies <br>Radioweg 24 <br>1324 KP Almere <br>Niederlande </p>
+    </div>
+    <div class="imprint__content--title">
+      <h5>Handelsregisternummer:</h5>
+    </div>
+    <div class="imprint__content--subtext">
+      <p>74768816</p>
+    </div>
+    <div class="imprint__content--title">
+      <h5>Umsatzsteuer-ID:</h5>
+    </div>
+    <div class="imprint__content--subtext">
+      <p>NL860019494B01</p>
+    </div>
+    <div class="imprint__content--title">
+      <h5>TEL:</h5>
+    </div>
+    <div class="imprint__content--subtext">
+      <p>+ 31 (0) 20 7670552</p>
+    </div>
+    <div class="imprint__content--title">
+      <h5>Registrierte Adresse:</h5>
+    </div>
+    <div class="imprint__content--subtext">
+      <p>Premium Health Europe B.V. <br>Zuideinde 79 <br>1121DD Landsmeer <br>Niederlande </p>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -103,22 +98,22 @@
             </h3>
             <ul>
               <li class="normal">
-                <a href="/imprint.html">
+                <a href="/imprint.html" class="color--fancy">
                   Impressum & Kontakt
                 </a>
               </li>
               <li class="normal">
-                <a href="/terms.html">
+                <a href="/terms.html" class="color--fancy">
                   Allgemeine Geschäftsbedingungen
                 </a>
               </li>
               <li class="normal">
-                <a href="/privacy.html">
+                <a href="/privacy.html" class="color--fancy">
                   Datenschutz
                 </a>
               </li>
               <li class="normal">
-                <a href="/index.html">
+                <a href="/index.html" class="color--fancy">
                   Startseite
                 </a>
               </li>
@@ -133,7 +128,6 @@
       </div>
     </div>
   </footer>
-
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
