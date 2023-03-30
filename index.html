@@ -173,25 +173,29 @@
           <div class="body__form--content col-6">
             <label class="d-block" for="weight">Gewicht</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" pattern="[1-9]*" type="number" name="weight" id="weight">
+              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
+                name="weight" id="weight">
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
+            <p class="error__msg--weight">Bitte geben Sie Ihr Gewicht ein.</p>
           </div>
           <div class="body__form--content col-6">
             <label class="d-block" for="targetWeight">Zielgewicht</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" pattern="[1-9]*" type="number" name="targetWeight"
-                id="targetWeight">
+              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
+                name="targetWeight" id="targetWeight">
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
+            <p class="error__msg--targetweight">Bitte geben Sie Ihr Zielgewicht ein.</p>
           </div>
           <div class="body__form--content col-12 my-4">
             <label class="d-block" for="targetHeight">Körpergröße</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-2 rounded-start" pattern="[1-9]*" type="number" name="targetHeight"
-                id="targetHeight">
+              <input class="body__form--input-2 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
+                name="targetHeight" id="targetHeight">
               <span class="body__form--input-span rounded-end">cm</span>
             </div>
+            <p class="error__msg--targetheight">Bitte geben Sie eine Zahl ein.</p>
           </div>
           <div class="body__form--content col-12 mb-4">
             <label class="d-block" for="age">Ihr Alter</label>
@@ -282,9 +286,10 @@
               <option value="99">99 Jahre</option>
             </select>
             <img class="body__form--select-arrow" src="/media/down-arrow.png" alt="down arrow">
+            <p class="error__msg--select">Bitte Alter wählen...</p>
           </div>
           <div class="body__form--btn-box">
-            <button type="submit" class="body__form--btn rounded">Weiter</button>
+            <button class="body__form--btn body__form--btn-male rounded">Weiter</button>
           </div>
         </form>
       </div>
@@ -318,25 +323,29 @@
           <div class="body__form--content col-6">
             <label class="d-block" for="weight">Gewicht</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" pattern="[1-9]*" type="number" name="weight" id="weight">
+              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
+                name="weight" id="weight">
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
+            <p class="error__msg--weight">Bitte geben Sie Ihr Gewicht ein.</p>
           </div>
           <div class="body__form--content col-6">
             <label class="d-block" for="targetWeight">Zielgewicht</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" pattern="[1-9]*" type="number" name="targetWeight"
-                id="targetWeight">
+              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
+                name="targetWeight" id="targetWeight">
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
+            <p class="error__msg--targetweight">Bitte geben Sie Ihr Zielgewicht ein.</p>
           </div>
           <div class="body__form--content col-12 my-4">
             <label class="d-block" for="targetHeight">Körpergröße</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-2 rounded-start" type="number" pattern="[1-9]*" name="targetHeight"
-                id="targetHeight">
+              <input class="body__form--input-2 rounded-start" maxlength="3" type="number" pattern="[0-9]*"
+                name="targetHeight" id="targetHeight">
               <span class="body__form--input-span rounded-end">cm</span>
             </div>
+            <p class="error__msg--targetheight">Bitte geben Sie eine Zahl ein.</p>
           </div>
           <div class="body__form--content col-12 mb-4">
             <label class="d-block" for="age">Ihr Alter</label>
@@ -427,11 +436,98 @@
               <option value="99">99 Jahre</option>
             </select>
             <img class="body__form--select-arrow" src="/media/down-arrow.png" alt="down arrow">
+            <p class="error__msg--select">Bitte Alter wählen...</p>
           </div>
           <div class="body__form--btn-box">
-            <button type="submit" class="body__form--btn rounded">Weiter</button>
+            <button class="body__form--btn body__form--btn-female rounded">Weiter</button>
           </div>
         </form>
+      </div>
+    </section>
+
+    <section class="body__updated--container rounded bg-white mx-auto">
+      <div class="body__updated--wrapper">
+        <h2 class="body__updated--heading">
+          Mit einer Anwendung von Slimming Gummies® könnten Sie Ihr Zielgewicht von 60kg voraussichtlich in den nächsten
+          70 Tagen zwischen dem
+          <span class="body__updated--heading-span">2. Juni 2023</span>
+          und dem <span class="body__updated--heading-span">9. Juni 2023</span> erreichen.
+        </h2>
+        <div class="body__updated--row row">
+          <div class="body__updated--col col-6">
+            <div class="body__updated--col-img">
+              <img src="/media/male_05.201f1c4d.png" alt="body image">
+            </div>
+            <div class="body__update--img-title mb-3">
+              <p class="body__update--text-from">Jetzt</p>
+            </div>
+            <p class="body__update--img-subtext subtext-thin">Körperfettanteil</p>
+            <span class="body__update--span-dynamic">17-25%</span>
+          </div>
+          <div class="body__updated--col col-6">
+            <div class="body__updated--col-img">
+              <img src="/media/male_03.63f61f4c.png" alt="body image">
+            </div>
+            <div class="body__update--img-title mb-3">
+              <p class="body__update--text-to">Nach <span>13</span> Tagen</p>
+            </div>
+            <p class="body__update--img-subtext subtext-bold">Körperfettanteil</p>
+            <span class="body__update--span-static">15-17%</span>
+          </div>
+        </div>
+
+        <div class="body__update--chart-row row">
+          <div class="body__update--chart-col col-12">
+            <span class="body__update--chart-date chart-date-left rounded">31. März 2023</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-graph" viewBox="25 18 515 272">
+              <linearGradient id="a" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0" stop-color="#e74b55" stop-opacity="0.08"></stop>
+                <stop offset="0.25" stop-color="#e74b55" stop-opacity="0.1"></stop>
+                <stop offset="0.75" stop-color="#e74b55" stop-opacity="0.35"></stop>
+                <stop offset="1" stop-color="#e74b55" stop-opacity="0.5"></stop>
+              </linearGradient>
+              <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="-325.711" x2="406.582" y1="635.122"
+                y2="635.122">
+                <stop offset="0" stop-color="#e74b55"></stop>
+                <stop offset="1" stop-color="#e74b55"></stop>
+              </linearGradient>
+              <path class="verticalYJMM" d="m 499.16826,18.287226 0,215.299534 M 71.824417,50.707103 l 0,-32.419877"
+                stroke="#cccccc" stroke-linecap="round" stroke-width="2" style=""></path>
+              <g stroke-width="1.419" transform="matrix(.704 0 0 .704 254.421 -501.894)">
+                <g fill-rule="evenodd">
+                  <circle cx="-260" cy="790" fill="#e74b55" r="10" class="smile-circle" stroke="#e74b55"
+                    stroke-width="30"></circle>
+                  <circle cx="347.52" cy="1046.5" fill="#e74b55" r="10" class="smile-circle" stroke="#e74b55"
+                    stroke-width="30"></circle>
+                </g>
+                <g class="lavelSVG"><text x="-259.728" y="830.083" class="svgText cSad chart-text-bold">
+                    <tspan fill="#e74b55">70 kg</tspan>
+                  </text><text x="347.80" class="chart-text-bold" y="1086.85" class="svgText cGreen">
+                    <tspan fill="#222">65 kg</tspan>
+                  </text></g><text transform="rotate(13.553431)" class="svgText" x="260.59555" y="887.11548">
+                  <tspan class="chart-text-bold">13 Tage</tspan>
+                </text>
+                <path
+                  d="M 22.840437,932.52897 C -97.103516,909.7525 -181.16095,828.77495 -259.77236,792.93941 c -21.82519,-9.94916 -43.23059,-6.70573 -64.86765,-7.48419 l -1.24209,339.39418 731.53409,0 -1.23199,-72.0852 c -20.15615,-0.1448 -39.05105,0.072 -57.03792,-3.0413 C 232.79247,1029.8902 155.05635,957.63579 22.840437,932.52897 Z"
+                  fill="url(#a)" fill-rule="evenodd" style=""></path>
+                <path
+                  d="m 404.42,1051.282 c -20.4096,-0.1466 -39.52603,0.026 -57.716,-3.1594 C 232.4854,1028.123 154.79539,956.10408 22.840437,931.04681 -97.374807,908.21883 -181.54101,826.92618 -260.30568,791.21476 c -21.64064,-9.81173 -42.85471,-6.57746 -64.33432,-7.35027"
+                  fill="none" stroke="url(#b)" stroke-dasharray="4 8" stroke-linecap="round" stroke-width="3" style="">
+                  <animate attributeName="stroke-dashoffset" attributeType="XML" values="0;12" dur="0.48s"
+                    repeatCount="indefinite" repeatDur="indefinite" end="" fill="freeze" calcMode="linear"
+                    restart="whenNotActive"></animate>
+                </path>
+              </g>
+              <path class="face_1"
+                d="m 66.100964,58.094734 h 10.560081 c 0.689772,0 1.245075,0.555304 1.245075,1.245075 0,0.689772 -0.555303,1.245076 -1.245075,1.245076 H 66.100964 c -0.689772,0 -1.245076,-0.555304 -1.245076,-1.245076 0,-0.689771 0.555304,-1.245075 1.245076,-1.245075 z m 5.281008,-19.245731 c -8.50269,0 -15.41796,6.91333 -15.41796,15.41602 0,8.50268 6.91527,15.417962 15.41796,15.417962 8.50269,0 15.41602,-6.915282 15.41602,-15.417962 0,-8.50269 -6.91333,-15.41602 -15.41602,-15.41602 z m 0,2 c 7.4218,0 13.41602,5.99421 13.41602,13.41602 0,7.4218 -5.99422,13.41796 -13.41602,13.41796 -7.4218,0 -13.41796,-5.99616 -13.41796,-13.41796 0,-7.42181 5.99616,-13.41602 13.41796,-13.41602 z m -5.0371,7.68165 c -1.327607,6e-4 -2.403699,1.076683 -2.40431,2.40429 -4.71e-4,1.328373 1.075937,2.405649 2.40431,2.40625 1.329126,4.66e-4 2.406711,-1.077124 2.40624,-2.40625 -6.12e-4,-1.328361 -1.077879,-2.404755 -2.40624,-2.40429 z m 10.07812,0 c -1.327607,6e-4 -2.403699,1.076683 -2.40431,2.40429 -4.71e-4,1.328373 1.075937,2.405649 2.40431,2.40625 1.329892,0.0015 2.408672,-1.076357 2.4082,-2.40625 -6.11e-4,-1.329127 -1.079074,-2.405839 -2.4082,-2.40429 z"
+                fill="#fff"></path>
+              <path class="face_2"
+                d="m 499.07604,219.42504 c -8.50269,0 -15.41796,6.91532 -15.41796,15.41802 0,8.50263 6.91527,15.41598 15.41796,15.41598 8.5027,0 15.41602,-6.91335 15.41602,-15.41598 0,-8.5027 -6.91332,-15.41802 -15.41602,-15.41802 z m 0,1.99999 c 7.4218,0 13.41797,5.99618 13.41797,13.41803 0,7.42178 -5.99617,13.41599 -13.41797,13.41599 -7.42181,0 -13.41796,-5.99421 -13.41796,-13.41599 0,-7.42185 5.99615,-13.41803 13.41796,-13.41803 z m -5.03515,7.68163 a 2.4053976,2.4053976 0 0 0 -2.40625,2.4043 2.4053976,2.4053976 0 0 0 2.40625,2.4062 2.4053976,2.4053976 0 0 0 2.40429,-2.4062 2.4053976,2.4053976 0 0 0 -2.40429,-2.4043 z m 10.07812,0 a 2.4053976,2.4053976 0 0 0 -2.40625,2.4043 2.4053976,2.4053976 0 0 0 2.40625,2.4062 2.4053976,2.4053976 0 0 0 2.40625,-2.4062 2.4053976,2.4053976 0 0 0 -2.40625,-2.4043 z m -10.79492,9.15432 a 1.1124706,1.1124706 0 0 0 -0.8125,1.84758 c 1.60807,1.88623 4.02679,2.96124 6.57422,2.96095 a 1.1124706,1.1124706 0 0 0 0.002,0 c 2.54335,0 4.9554,-1.07824 6.56055,-2.96095 a 1.1125917,1.1125917 0 0 0 -1.69141,-1.44531 c -1.15889,1.35935 -2.95737,2.17923 -4.87109,2.18169 -1.91812,1.5e-4 -3.71969,-0.81966 -4.88086,-2.18169 a 1.1124706,1.1124706 0 0 0 -0.88084,-0.40234 z"
+                fill="#fff"></path>
+            </svg>
+            <span class="body__update--chart-date chart-date-right rounded">13. April 2023</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>

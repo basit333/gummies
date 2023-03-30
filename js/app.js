@@ -16,6 +16,9 @@ const bodyFormMale = document.querySelector(".body__form--container-male");
 const bodyFormFemale = document.querySelector(".body__form--container-female");
 const bodyArrowBtnMale = document.querySelector(".body__arrow--box-male");
 const bodyArrowBtnFemale = document.querySelector(".body__arrow--box-female");
+const bodyUpdatedContainer = document.querySelector(".body__updated--container");
+const bodyFormBtnFemale = document.querySelector(".body__form--btn-female");
+const bodyFormBtnMale = document.querySelector(".body__form--btn-male");
 
 // define an object to map range values to image filenames
 const imageArrayMale = ["male_01.d6f82abd.png", "male_02.51a94a2c.png", "male_03.63f61f4c.png", "male_04.142854cb.png", "male_05.201f1c4d.png"];
@@ -88,5 +91,21 @@ if (rangeSliderFemale) {
     const imageFilename = imageArrayFemale[sliderValue - 1];
     // set the src attribute of the image to the new filename
     bodyImageFemale.src = `/media/${imageFilename}`;
+  });
+}
+
+if (bodyFormBtnMale) {
+  bodyFormBtnMale.addEventListener("click", function (e) {
+    e.preventDefault();
+    bodyUpdatedContainer.style.display = "block";
+    bodyFormMale.style.display = "none";
+  });
+}
+
+if (bodyFormBtnFemale) {
+  bodyFormBtnFemale.addEventListener("click", function (e) {
+    e.preventDefault();
+    bodyUpdatedContainer.style.display = "block";
+    bodyFormFemale.style.display = "none";
   });
 }
