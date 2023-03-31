@@ -1038,7 +1038,7 @@ input[type="range"]::-webkit-slider-thumb {
   --primary: #369;
   --secondary: #adf;
   --size: 250px;
-  animation: progressBar 2s forwards;
+  animation: progressBar 1s forwards;
   width: var(--size);
   aspect-ratio: 1;
   border-radius: 50%;

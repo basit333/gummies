@@ -38,13 +38,8 @@ const DOMElements = {
   sliderSubmitBtn: document.querySelector("#slider-submit-btn"),
   loader: document.querySelector("#loader"),
   loaderCounter: document.querySelector("#loader-counter"),
-  // swipe
   swipeHandMale: document.querySelector(".body__swipe--hand--male"),
-  swipeHandFemale: document.querySelector(".body__swipe--hand--female"),
-  rangeSliderMale: document.querySelector(".range__slider--male"),
-  rangeSliderFemale: document.querySelector(".range__slider--female"),
   bodyArrowBtnMale: document.querySelector(".body__arrow--box-male"),
-  bodyArrowBtnFemale: document.querySelector(".body__arrow--box-female"),
   form: {
     section: document.querySelector("#form"),
     element: document.querySelector("#form-element"),
@@ -123,6 +118,18 @@ const DOMHelpers = {
   hideLoader: function () {
     DOMElements.loader.style.display = "none";
   },
+
+  hideSwipeHandMale: function () {
+    DOMElements.swipeHandMale.style.display = "none";
+  },
+
+  moveBackTo: function () {
+    DOMElements.form.section.style.display = "none";
+  },
+
+  moveBackToSlider: function () {
+    DOMElements.sliderSection.style.display = "block";
+  },
 };
 
 /**
@@ -134,6 +141,11 @@ DOMElements.maleBtn.addEventListener("click", function () {
   DOMHelpers.hideHeroSection();
   DOMHelpers.hideMainSection();
   DOMHelpers.initSliderSection();
+});
+
+DOMElements.bodyArrowBtnMale.addEventListener("click", function () {
+  DOMHelpers.moveBackTo();
+  DOMHelpers.moveBackToSlider();
 });
 
 DOMElements.femaleBtn.addEventListener("click", function () {
@@ -151,6 +163,7 @@ DOMElements.sliderRange.addEventListener("input", function () {
   values.bodyType = this.value;
   const images = assets[values.gender];
   DOMElements.sliderImage.setAttribute("src", `/media/${images[values.bodyType]}`);
+  DOMHelpers.hideSwipeHandMale();
 });
 
 /**
