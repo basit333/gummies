@@ -42,6 +42,7 @@ const DOMElements = {
   bodyArrowBtnMale: document.querySelector(".body__arrow--box-male"),
   currentWeightTspanSvg: document.querySelector("#current-weight-tspan-svg"),
   targetWeightTspanSvg: document.querySelector("#target-weight-tspan-svg"),
+  estimateDaysTspan: document.querySelector("#estimate-days-tspan"),
 
   form: {
     section: document.querySelector("#form"),
@@ -219,14 +220,15 @@ DOMElements.form.element.addEventListener("submit", function (event) {
 
   if (!hasErrors) {
     // estimatedDays code goes here
-    // const estimatedDays = estimateDaysToTargetWeight(currentWeight, targetWeight, 180, 24, true, 1);
+    const estimatedDays = daysToLoseWeight(values.currentWeight, values.targetWeight, values.height, values.age, values.gender);
 
     /**
      * @see https://day.js.org/docs/en/manipulate/add
      */
     values.currentDate = dayjs();
-    values.targetDate = values.currentDate.add(40, "day"); // replace 40 with "estimatedDays" variable
-    // values.estimatedDays = estimatedDays
+    values.targetDate = values.currentDate.add(estimatedDays, "day"); // replace 40 with "estimatedDays" variable
+    values.estimatedDays = estimatedDays;
+    DOMElements.estimateDaysTspan.textContent = estimatedDays;
 
     DOMHelpers.showLoader();
     DOMHelpers.hideFormSection();
@@ -255,4 +257,27 @@ function animateCounter() {
 
     DOMElements.loaderCounter.textContent = `${animationLoaderCounter}%`;
   }, 9);
+}
+
+function daysToLoseWeight(_currentWeight, _targetWeight, _height, _age, _gender) {
+  const weight = _currentWeight; // current weight in kg
+  const targetWeight = _targetWeight; // target weight in kg
+  const height = _height; // height in cm
+  const age = _age; // age in years
+  const gender = _gender; // "male" or "female"
+
+  let bmr;
+
+  if (gender === "male") {
+    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+  } else {
+    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+  }
+
+  const dailyCalorieIntake = bmr * 1.2 - 500;
+  const weightLossRate = 0.5; // losing 0.5 kg per week is a safe and healthy rate
+  const weeksToLoseWeight = (weight - targetWeight) / weightLossRate;
+  const timeToLoseWeight = weeksToLoseWeight * 7; // converting weeks to days
+
+  return Math.round(timeToLoseWeight);
 }
