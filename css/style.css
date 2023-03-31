@@ -1084,6 +1084,13 @@ input[type="range"]::-ms-fill-upper {
   margin: 20px 0 0 0;
 }
 
+/* SVG Chart */
+
+.graph-lines-dotted {
+  stroke-width: 1.5px;
+  stroke-dasharray: 0 3;
+}
+
 @keyframes progressBar {
   0% {
     --percentage: 0;
