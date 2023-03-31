@@ -11,25 +11,6 @@ const assets = {
 
 const bmis = ["15-17%", "17-25%", "25-30%", "30-35%", "35-40%"];
 
-// const estimateDays = function (currentWeight, height, age) {
-//   const bmr = 88.362 + 13.397 * currentWeight + 4.799 * height - 5.677 * age;
-//   // Calculate daily caloric needs based on activity level
-//   const activityFactor = 1.2; // Sedentary
-//   const dailyCalories = bmr * activityFactor;
-//   // Calculate daily caloric deficit needed to achieve target weight loss
-//   const deficitCalories = 3500; // 1 pound of fat = 3500 calories
-//   const weightLossPerWeek = 1; // Aim for 1-2 pounds of weight loss per week
-//   const deficitPerDay = (deficitCalories * weightLossPerWeek) / 7;
-//   const deficitPercentage = deficitPerDay / dailyCalories;
-//   const targetDailyCalories = dailyCalories - deficitPerDay;
-//   // Calculate target weight loss and return result
-//   const weightLoss = currentWeight - targetWeight;
-//   const targetWeeks = weightLoss / weightLossPerWeek;
-//   const targetCaloricDeficit = targetWeeks * deficitPerDay;
-//   const targetWeightLoss = targetCaloricDeficit / deficitCalories;
-//   return targetWeightLoss;
-// };
-
 const values = {
   gender: "",
   /**
