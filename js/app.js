@@ -1,111 +1,239 @@
-const heroContainer = document.querySelector(".hero");
-const middleContainer = document.querySelector(".middle");
-const maleBodyContainer = document.querySelector(".male__body--container");
-const femaleBodyContainer = document.querySelector(".female__body--container");
-const btnMale = document.querySelector(".btn-male");
-const btnFemale = document.querySelector(".btn-female");
-const rangeSliderMale = document.querySelector(".range__slider--male");
-const bodyImageMale = document.querySelector(".body__image--male");
-const rangeSliderFemale = document.querySelector(".range__slider--female");
-const bodyImageFemale = document.querySelector(".body__image--female");
-const swipeHandMale = document.querySelector(".body__swipe--hand--male");
-const swipeHandFemale = document.querySelector(".body__swipe--hand--female");
-const bodyProgressBtnMale = document.querySelector(".body__progress--btn-male");
-const bodyProgressBtnFemale = document.querySelector(".body__progress--btn-female");
-const bodyFormMale = document.querySelector(".body__form--container-male");
-const bodyFormFemale = document.querySelector(".body__form--container-female");
-const bodyArrowBtnMale = document.querySelector(".body__arrow--box-male");
-const bodyArrowBtnFemale = document.querySelector(".body__arrow--box-female");
-const bodyUpdatedContainer = document.querySelector(".body__updated--container");
-const bodyFormBtnFemale = document.querySelector(".body__form--btn-female");
-const bodyFormBtnMale = document.querySelector(".body__form--btn-male");
+/**
+ * @see https://cdnjs.com/libraries/dayjs
+ * @see https://day.js.org/docs/en/i18n/i18n
+ */
+dayjs.locale("de");
 
-// define an object to map range values to image filenames
-const imageArrayMale = ["male_01.d6f82abd.png", "male_02.51a94a2c.png", "male_03.63f61f4c.png", "male_04.142854cb.png", "male_05.201f1c4d.png"];
+const assets = {
+  male: ["male_01.d6f82abd.png", "male_02.51a94a2c.png", "male_03.63f61f4c.png", "male_04.142854cb.png", "male_05.201f1c4d.png"],
+  female: ["female_01.b6fe98a3.png", "female_02.d9500124.png", "female_03.bf7dda16.png", "female_04.0c5032a6.png", "female_05.0ff2f17d.png"],
+};
 
-const imageArrayFemale = ["female_01.b6fe98a3.png", "female_02.d9500124.png", "female_03.bf7dda16.png", "female_04.0c5032a6.png", "female_05.0ff2f17d.png"];
+const bmis = ["15-17%", "17-25%", "25-30%", "30-35%", "35-40%"];
 
-if (btnMale) {
-  btnMale.addEventListener("click", function () {
-    maleBodyContainer.style.display = "block";
-    heroContainer.style.display = "none";
-    middleContainer.style.display = "none";
-  });
-}
+const values = {
+  gender: "",
+  /**
+   * Currently, there are only 5 body types,
+   * we take the middle one as default.
+   */
+  bodyType: 2,
+  age: 0,
+  height: 0,
+  targetWeight: 0,
+  currentWeight: 0,
+  estimatedDays: 0,
+  currentDate: null,
+  targetDate: null,
+};
 
-if (btnFemale) {
-  btnFemale.addEventListener("click", function () {
-    femaleBodyContainer.style.display = "block";
-    heroContainer.style.display = "none";
-    middleContainer.style.display = "none";
-  });
-}
+const DOMElements = {
+  maleBtn: document.querySelector(".btn-male"),
+  femaleBtn: document.querySelector(".btn-female"),
+  heroSection: document.querySelector("#hero"),
+  mainSection: document.querySelector("#main"),
+  sliderSection: document.querySelector("#slider"),
+  sliderImage: document.querySelector("#slider-image"),
+  sliderRange: document.querySelector("#range"),
+  sliderSubmitBtn: document.querySelector("#slider-submit-btn"),
+  loader: document.querySelector("#loader"),
+  loaderCounter: document.querySelector("#loader-counter"),
+  // swipe
+  swipeHandMale: document.querySelector(".body__swipe--hand--male"),
+  swipeHandFemale: document.querySelector(".body__swipe--hand--female"),
+  rangeSliderMale: document.querySelector(".range__slider--male"),
+  rangeSliderFemale: document.querySelector(".range__slider--female"),
+  bodyArrowBtnMale: document.querySelector(".body__arrow--box-male"),
+  bodyArrowBtnFemale: document.querySelector(".body__arrow--box-female"),
+  form: {
+    section: document.querySelector("#form"),
+    element: document.querySelector("#form-element"),
+    currentWeight: document.querySelector("#current-weight"),
+    targetWeight: document.querySelector("#target-weight"),
+    height: document.querySelector("#height"),
+    age: document.querySelector("#age"),
+    currentWeightError: document.querySelector("#current-weight-error"),
+    targetWeightError: document.querySelector("#target-weight-error"),
+    heightError: document.querySelector("#height-error"),
+    ageError: document.querySelector("#age-error"),
+  },
+  result: {
+    section: document.querySelector("#result"),
+    targetWeight: document.querySelector("#target-weight-span"),
+    currentDate: document.querySelector("#current-date-span"),
+    targetDate: document.querySelector("#target-date-span"),
+    currentImage: document.querySelector("#current-image"),
+    targetImage: document.querySelector("#target-image"),
+    estimatedDays: document.querySelector("#estimated-days"),
+    currentDateInChart: document.querySelector("#current-date-in-chart"),
+    targetDateInChart: document.querySelector("#target-date-in-chart"),
+    bmi: document.querySelector("#bmi"),
+  },
+};
 
-if (bodyProgressBtnMale && bodyFormMale) {
-  bodyProgressBtnMale.addEventListener("click", () => {
-    bodyFormMale.style.display = "block";
-    maleBodyContainer.style.display = "none";
-  });
-}
+const DOMHelpers = {
+  hideHeroSection: function () {
+    DOMElements.heroSection.style.display = "none";
+  },
+  hideMainSection: function () {
+    DOMElements.mainSection.style.display = "none";
+  },
+  initSliderSection: function () {
+    const gender = values.gender;
+    const bodyType = values.bodyType;
 
-if (bodyProgressBtnFemale && bodyFormFemale) {
-  bodyProgressBtnFemale.addEventListener("click", () => {
-    bodyFormFemale.style.display = "block";
-    femaleBodyContainer.style.display = "none";
-  });
-}
+    const images = assets[gender];
 
-if (bodyArrowBtnMale) {
-  bodyArrowBtnMale.addEventListener("click", () => {
-    maleBodyContainer.style.display = "block";
-    bodyFormMale.style.display = "none";
-  });
-}
+    DOMElements.sliderImage.setAttribute("src", `/media/${images[bodyType]}`);
+    DOMElements.sliderSection.style.display = "block";
+  },
+  hideSliderSection: function () {
+    DOMElements.sliderSection.style.display = "none";
+  },
+  showFormSection: function () {
+    DOMElements.form.section.style.display = "block";
+  },
+  hideFormSection: function () {
+    DOMElements.form.section.style.display = "none";
+  },
+  initResultSection: function () {
+    DOMElements.result.section.style.display = "block";
 
-if (bodyArrowBtnFemale) {
-  bodyArrowBtnFemale.addEventListener("click", () => {
-    femaleBodyContainer.style.display = "block";
-    bodyFormFemale.style.display = "none";
-  });
-}
+    const images = assets[values.gender];
 
-// add an event listener to the range slider
-if (rangeSliderMale) {
-  rangeSliderMale.addEventListener("input", function () {
-    swipeHandMale.style.display = "none";
-    // get the current value of the slider
-    const sliderValue = this.value;
-    // get the corresponding image filename from the image map
-    const imageFilename = imageArrayMale[sliderValue - 1];
-    // set the src attribute of the image to the new filename
-    bodyImageMale.src = `/media/${imageFilename}`;
-  });
-}
+    DOMElements.result.targetImage.setAttribute("src", `/media/${images[0]}`);
+    DOMElements.result.currentImage.setAttribute("src", `/media/${images[values.bodyType]}`);
 
-if (rangeSliderFemale) {
-  rangeSliderFemale.addEventListener("input", function () {
-    swipeHandFemale.style.display = "none";
-    // get the current value of the slider
-    const sliderValue = this.value;
-    // get the corresponding image filename from the image array
-    const imageFilename = imageArrayFemale[sliderValue - 1];
-    // set the src attribute of the image to the new filename
-    bodyImageFemale.src = `/media/${imageFilename}`;
-  });
-}
+    DOMElements.result.bmi.textContent = bmis[values.bodyType];
+    DOMElements.result.targetWeight.textContent = values.targetWeight;
+    DOMElements.result.estimatedDays.textContent = values.estimatedDays;
 
-if (bodyFormBtnMale) {
-  bodyFormBtnMale.addEventListener("click", function (e) {
-    e.preventDefault();
-    bodyUpdatedContainer.style.display = "block";
-    bodyFormMale.style.display = "none";
-  });
-}
+    /**
+     * @see https://day.js.org/docs/en/parse/string-format
+     */
+    DOMElements.result.currentDate.textContent = values.currentDate.format("DD MMMM");
+    DOMElements.result.targetDate.textContent = values.targetDate.format("DD MMMM");
 
-if (bodyFormBtnFemale) {
-  bodyFormBtnFemale.addEventListener("click", function (e) {
-    e.preventDefault();
-    bodyUpdatedContainer.style.display = "block";
-    bodyFormFemale.style.display = "none";
-  });
+    DOMElements.result.targetDateInChart.textContent = values.targetDate.format("DD MMMM YYYY");
+    DOMElements.result.currentDateInChart.textContent = values.currentDate.format("DD MMMM YYYY");
+  },
+  showLoader: function () {
+    DOMElements.loader.style.display = "block";
+  },
+  hideLoader: function () {
+    DOMElements.loader.style.display = "none";
+  },
+};
+
+/**
+ * Form init (main) section.
+ */
+DOMElements.maleBtn.addEventListener("click", function () {
+  values.gender = "male";
+
+  DOMHelpers.hideHeroSection();
+  DOMHelpers.hideMainSection();
+  DOMHelpers.initSliderSection();
+});
+
+DOMElements.femaleBtn.addEventListener("click", function () {
+  values.gender = "female";
+
+  DOMHelpers.hideHeroSection();
+  DOMHelpers.hideMainSection();
+  DOMHelpers.initSliderSection();
+});
+
+/**
+ * Slider section.
+ */
+DOMElements.sliderRange.addEventListener("input", function () {
+  values.bodyType = this.value;
+  const images = assets[values.gender];
+  DOMElements.sliderImage.setAttribute("src", `/media/${images[values.bodyType]}`);
+});
+
+/**
+ * Form section.
+ */
+DOMElements.sliderSubmitBtn.addEventListener("click", function () {
+  DOMHelpers.hideSliderSection();
+  DOMHelpers.showFormSection();
+});
+
+DOMElements.form.element.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let hasErrors = false;
+
+  values.age = DOMElements.form.age.value;
+  values.height = DOMElements.form.height.value;
+  values.targetWeight = DOMElements.form.targetWeight.value;
+  values.currentWeight = DOMElements.form.currentWeight.value;
+
+  if (!values.age) {
+    hasErrors = true;
+    DOMElements.form.ageError.style.display = "block";
+  } else {
+    DOMElements.form.ageError.style.display = "none";
+  }
+
+  if (!values.height || values.height <= 0) {
+    hasErrors = true;
+    DOMElements.form.heightError.style.display = "block";
+  } else {
+    DOMElements.form.heightError.style.display = "none";
+  }
+
+  if (!values.targetWeight || values.targetWeight <= 0) {
+    hasErrors = true;
+    DOMElements.form.targetWeightError.style.display = "block";
+  } else {
+    DOMElements.form.targetWeightError.style.display = "none";
+  }
+
+  if (!values.currentWeight || values.currentWeight <= 0) {
+    hasErrors = true;
+    DOMElements.form.currentWeightError.style.display = "block";
+  } else {
+    DOMElements.form.currentWeightError.style.display = "none";
+  }
+
+  if (!hasErrors) {
+    // const estimatedDays = estimateDaysToTargetWeight(currentWeight, targetWeight, 180, 24, true, 1);
+
+    /**
+     * @see https://day.js.org/docs/en/manipulate/add
+     */
+    values.currentDate = dayjs();
+    values.targetDate = values.currentDate.add(40, "day"); // replace 40 with "estimatedDays" variable
+    // values.estimatedDays = estimatedDays
+
+    DOMHelpers.showLoader();
+    DOMHelpers.hideFormSection();
+
+    animateCounter();
+
+    setTimeout(() => {
+      DOMHelpers.hideLoader();
+      DOMHelpers.initResultSection();
+    }, 1000);
+  }
+});
+
+/**
+ * Helper methods.
+ */
+function animateCounter() {
+  let animationLoaderCounter = 0;
+
+  const intervalRef = setInterval(function () {
+    animationLoaderCounter += 1;
+
+    if (animationLoaderCounter >= 90) {
+      clearInterval(intervalRef);
+    }
+
+    DOMElements.loaderCounter.textContent = `${animationLoaderCounter}%`;
+  }, 9);
 }

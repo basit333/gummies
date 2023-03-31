@@ -23,7 +23,7 @@
   <!-- Main -->
   <main class="main__container px-2">
     <!-- hero -->
-    <hero class="hero pt-1">
+    <hero class="hero pt-1" id="hero">
       <div class="hero__overlay--mobile"></div>
       <div class="hero__row row rounded-top">
         <div class="hero__content--box col-12">
@@ -35,7 +35,7 @@
     </hero>
 
     <!-- Middle -->
-    <section class="middle rounded-bottom pb-4">
+    <section class="middle rounded-bottom pb-4" id="main">
       <div class="middle__row">
         <div class="middle__content middle__content--text text-center">
           <h2 class="middle__content--heading color--fancy">Finden Sie heraus, wie viel Gewicht Sie mit einer Anwendung
@@ -55,13 +55,13 @@
         <div class="middle__media--col-6 col-6 text-center">
           <h3 class="middle__media--title">Wählen Sie Ihr Geschlecht</h3>
           <div class="middle__media--btns d-flex align-items-center justify-content-center">
-            <div class="btn-male rounded-circle">
+            <div class="btn-male rounded-circle" data-value="male">
               <div class="btn-male-img">
                 <img src="/media/male-icon.26bb4aa9.svg" alt="male icon">
               </div>
               <p class="btn-male-text">Männlich</p>
             </div>
-            <div class="btn-female rounded-circle">
+            <div class="btn-female rounded-circle" data-value="female">
               <div class="btn-female-img">
                 <img src="/media/female-icon.d903a167.svg" alt="female icon">
               </div>
@@ -78,7 +78,7 @@
     </section>
 
     <!-- Male Body Content -->
-    <section class="body__container male__body--container rounded bg-white mx-auto">
+    <section class="body__container male__body--container rounded bg-white mx-auto" id="slider">
       <div class="body__container--wrapper">
         <div class="body__progress--bar">
           <div class="progress rounded-0">
@@ -101,52 +101,19 @@
           <p>Wählen Sie den Körpertyp aus, der Ihrem aktuell am ähnlichsten ist.</p>
         </div>
         <div class="body__range--slider">
-          <input class="range__slider range__slider--male" type="range" id="range" min="1" max="5" step="1" value="3">
+          <input class="range__slider range__slider--male" type="range" id="range" min="0" max="4" step="1" value="2">
           <div class="body__image--box mx-auto my-4">
-            <img class="body__image body__image--male" src="/media/male_03.63f61f4c.png" alt="male body">
+            <img class="body__image body__image--male" src="/media/male_03.63f61f4c.png" alt="male body"
+              id="slider-image">
           </div>
           <img class="body__swipe--hand body__swipe--hand--male" src="/media/swipe.png" alt="swipe">
         </div>
-        <button class="body__container--btn rounded body__progress--btn-male">Weiter</button>
-      </div>
-    </section>
-
-    <!-- Female Body Content -->
-    <section class="body__container female__body--container rounded bg-white mx-auto">
-      <div class="body__container--wrapper">
-        <div class="body__progress--bar">
-          <div class="progress rounded-0">
-            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-              aria-valuemax="100">
-            </div>
-          </div>
-        </div>
-        <div class="body__pagination mt-2 px-1">
-          <a href="/index.html" class="body__arrow--box">
-            <svg class="body__arrow--icon" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
-              <path d="m3.828 9 6.071-6.071-1.414-1.414L0 10l.707.707 7.778 7.778 1.414-1.414L3.828 11H20V9H3.828z"
-                fill="#1a202c" class="fill-000000"></path>
-            </svg>
-          </a>
-          <span class="body__progress--steps">1/2</span>
-        </div>
-        <div class="body__text--content text-center">
-          <h2>Körperform</h2>
-          <p>Wählen Sie den Körpertyp aus, der Ihrem aktuell am ähnlichsten ist.</p>
-        </div>
-        <div class="body__range--slider">
-          <input class="range__slider range__slider--female" type="range" id="range" min="1" max="5" step="1" value="3">
-          <div class="body__image--box mx-auto my-4">
-            <img class="body__image body__image--female" src="/media/female_03.bf7dda16.png" alt="female body">
-          </div>
-          <img class="body__swipe--hand body__swipe--hand--female" src="/media/swipe.png" alt="swipe">
-        </div>
-        <button class="body__container--btn rounded body__progress--btn-female">Weiter</button>
+        <button class="body__container--btn rounded body__progress--btn-male" id="slider-submit-btn">Weiter</button>
       </div>
     </section>
 
     <!-- Body Form Details -->
-    <section class="body__form--container body__form--container-male rounded bg-white mx-auto">
+    <section class="body__form--container body__form--container rounded bg-white mx-auto" id="form">
       <div class="body__form-wrapper">
         <div class="body__progress--bar">
           <div class="progress rounded-0">
@@ -169,33 +136,33 @@
           <p>Zur Berechnung deines Erfolgskonzepts benötigen wir Ihre aktuellen Maße und Ihr Wunschgewicht. Alle
             Eingaben werden anonym behandelt und nur Sie können diese sehen.</p>
         </div>
-        <form class="body__form--input-wrapper row">
+        <form class="body__form--input-wrapper row" id="form-element">
           <div class="body__form--content col-6">
             <label class="d-block" for="weight">Gewicht</label>
             <div class="body__form--input-box">
               <input class="body__form--input-1 input__weight rounded-start" maxlength="3" pattern="[0-9]*"
-                type="number" name="weight" id="weight">
+                type="number" name="weight" id="current-weight" min="0" id="current-weight-error" required>
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
-            <p class="error__msg--weight">Bitte geben Sie Ihr Gewicht ein.</p>
+            <p class="error__msg--weight" id="current-weight-error">Bitte geben Sie Ihr Gewicht ein.</p>
           </div>
           <div class="body__form--content col-6">
             <label class="d-block" for="targetWeight">Zielgewicht</label>
             <div class="body__form--input-box">
               <input class="body__form--input-1 input__targetweight rounded-start" maxlength="3" pattern="[0-9]*"
-                type="number" name="targetWeight" id="targetWeight">
+                type="number" name="targetWeight" id="target-weight" min="0" required>
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
-            <p class="error__msg--targetweight">Bitte geben Sie Ihr Zielgewicht ein.</p>
+            <p class="error__msg--targetweight" id="target-weight-error">Bitte geben Sie Ihr Zielgewicht ein.</p>
           </div>
           <div class="body__form--content col-12 my-4">
             <label class="d-block" for="targetHeight">Körpergröße</label>
             <div class="body__form--input-box">
               <input class="body__form--input-2 input__targetheight rounded-start" maxlength="3" pattern="[0-9]*"
-                type="number" name="targetHeight" id="targetHeight">
+                type="number" name="targetHeight" id="height" min="0" required>
               <span class="body__form--input-span rounded-end">cm</span>
             </div>
-            <p class="error__msg--targetheight">Bitte geben Sie eine Zahl ein.</p>
+            <p class="error__msg--targetheight" id="height-error">Bitte geben Sie eine Zahl ein.</p>
           </div>
           <div class="body__form--content col-12 mb-4">
             <label class="d-block" for="age">Ihr Alter</label>
@@ -286,188 +253,40 @@
               <option value="99">99 Jahre</option>
             </select>
             <img class="body__form--select-arrow" src="/media/down-arrow.png" alt="down arrow">
-            <p class="error__msg--select">Bitte Alter wählen...</p>
+            <p class="error__msg--select" id="age-error">Bitte Alter wählen...</p>
           </div>
           <div class="body__form--btn-box">
-            <button type="submit" class="body__form--btn body__form--btn-male rounded">Weiter</button>
+            <button type="submit" class="body__form--btn body__form--btn-male rounded"
+              id="form-submit-btn">Weiter</button>
           </div>
         </form>
       </div>
     </section>
 
-    <!-- Body Form Details -->
-    <section class="body__form--container body__form--container-female rounded bg-white mx-auto">
-      <div class="body__form-wrapper">
-        <div class="body__progress--bar">
-          <div class="progress rounded-0">
-            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0"
-              aria-valuemax="100">
-            </div>
-          </div>
-        </div>
-        <div class="body__pagination mt-2 px-1">
-          <div class="body__arrow--box body__arrow--box-female">
-            <svg class="body__arrow--icon" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
-              <path d="m3.828 9 6.071-6.071-1.414-1.414L0 10l.707.707 7.778 7.778 1.414-1.414L3.828 11H20V9H3.828z"
-                fill="#1a202c" class="fill-000000"></path>
-            </svg>
-          </div>
-          <span class="body__progress--steps">2/2</span>
-        </div>
-        <div class="body__text--content text-center">
-          <h2>Maße</h2>
-          <p>Zur Berechnung deines Erfolgskonzepts benötigen wir Ihre aktuellen Maße und Ihr Wunschgewicht. Alle
-            Eingaben werden anonym behandelt und nur Sie können diese sehen.</p>
-        </div>
-        <form class="body__form--input-wrapper row">
-          <div class="body__form--content col-6">
-            <label class="d-block" for="weight">Gewicht</label>
-            <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
-                name="weight" id="weight">
-              <span class="body__form--input-span rounded-end">kg</span>
-            </div>
-            <p class="error__msg--weight">Bitte geben Sie Ihr Gewicht ein.</p>
-          </div>
-          <div class="body__form--content col-6">
-            <label class="d-block" for="targetWeight">Zielgewicht</label>
-            <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
-                name="targetWeight" id="targetWeight">
-              <span class="body__form--input-span rounded-end">kg</span>
-            </div>
-            <p class="error__msg--targetweight">Bitte geben Sie Ihr Zielgewicht ein.</p>
-          </div>
-          <div class="body__form--content col-12 my-4">
-            <label class="d-block" for="targetHeight">Körpergröße</label>
-            <div class="body__form--input-box">
-              <input class="body__form--input-2 rounded-start" maxlength="3" type="number" pattern="[0-9]*"
-                name="targetHeight" id="targetHeight">
-              <span class="body__form--input-span rounded-end">cm</span>
-            </div>
-            <p class="error__msg--targetheight">Bitte geben Sie eine Zahl ein.</p>
-          </div>
-          <div class="body__form--content col-12 mb-4">
-            <label class="d-block" for="age">Ihr Alter</label>
-            <select class="rounded body__form--select" name="age" id="age">
-              <option value="">Bitte Alter wählen...</option>
-              <option value="17">Unter 18 Jahre</option>
-              <option value="18">18 Jahre</option>
-              <option value="19">19 Jahre</option>
-              <option value="20">20 Jahre</option>
-              <option value="21">21 Jahre</option>
-              <option value="22">22 Jahre</option>
-              <option value="23">23 Jahre</option>
-              <option value="24">24 Jahre</option>
-              <option value="25">25 Jahre</option>
-              <option value="26">26 Jahre</option>
-              <option value="27">27 Jahre</option>
-              <option value="28">28 Jahre</option>
-              <option value="29">29 Jahre</option>
-              <option value="30">30 Jahre</option>
-              <option value="31">31 Jahre</option>
-              <option value="32">32 Jahre</option>
-              <option value="33">33 Jahre</option>
-              <option value="34">34 Jahre</option>
-              <option value="35">35 Jahre</option>
-              <option value="36">36 Jahre</option>
-              <option value="37">37 Jahre</option>
-              <option value="38">38 Jahre</option>
-              <option value="39">39 Jahre</option>
-              <option value="40">40 Jahre</option>
-              <option value="41">41 Jahre</option>
-              <option value="42">42 Jahre</option>
-              <option value="43">43 Jahre</option>
-              <option value="44">44 Jahre</option>
-              <option value="45">45 Jahre</option>
-              <option value="46">46 Jahre</option>
-              <option value="47">47 Jahre</option>
-              <option value="48">48 Jahre</option>
-              <option value="49">49 Jahre</option>
-              <option value="50">50 Jahre</option>
-              <option value="51">51 Jahre</option>
-              <option value="52">52 Jahre</option>
-              <option value="53">53 Jahre</option>
-              <option value="54">54 Jahre</option>
-              <option value="55">55 Jahre</option>
-              <option value="56">56 Jahre</option>
-              <option value="57">57 Jahre</option>
-              <option value="58">58 Jahre</option>
-              <option value="59">59 Jahre</option>
-              <option value="60">60 Jahre</option>
-              <option value="61">61 Jahre</option>
-              <option value="62">62 Jahre</option>
-              <option value="63">63 Jahre</option>
-              <option value="64">64 Jahre</option>
-              <option value="65">65 Jahre</option>
-              <option value="66">66 Jahre</option>
-              <option value="67">67 Jahre</option>
-              <option value="68">68 Jahre</option>
-              <option value="69">69 Jahre</option>
-              <option value="70">70 Jahre</option>
-              <option value="71">71 Jahre</option>
-              <option value="72">72 Jahre</option>
-              <option value="73">73 Jahre</option>
-              <option value="74">74 Jahre</option>
-              <option value="75">75 Jahre</option>
-              <option value="76">76 Jahre</option>
-              <option value="77">77 Jahre</option>
-              <option value="78">78 Jahre</option>
-              <option value="79">79 Jahre</option>
-              <option value="80">80 Jahre</option>
-              <option value="81">81 Jahre</option>
-              <option value="82">82 Jahre</option>
-              <option value="83">83 Jahre</option>
-              <option value="84">84 Jahre</option>
-              <option value="85">85 Jahre</option>
-              <option value="86">86 Jahre</option>
-              <option value="87">87 Jahre</option>
-              <option value="88">88 Jahre</option>
-              <option value="89">89 Jahre</option>
-              <option value="90">90 Jahre</option>
-              <option value="91">91 Jahre</option>
-              <option value="92">92 Jahre</option>
-              <option value="93">93 Jahre</option>
-              <option value="94">94 Jahre</option>
-              <option value="95">95 Jahre</option>
-              <option value="96">96 Jahre</option>
-              <option value="97">97 Jahre</option>
-              <option value="98">98 Jahre</option>
-              <option value="99">99 Jahre</option>
-            </select>
-            <img class="body__form--select-arrow" src="/media/down-arrow.png" alt="down arrow">
-            <p class="error__msg--select">Bitte Alter wählen...</p>
-          </div>
-          <div class="body__form--btn-box">
-            <button class="body__form--btn body__form--btn-female rounded">Weiter</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <section class="body__updated--container mx-auto">
+    <section class="body__updated--container mx-auto" id="result">
       <div class="body__updated--wrapper rounded bg-white">
         <h2 class="body__updated--heading">
-          Mit einer Anwendung von Slimming Gummies® könnten Sie Ihr Zielgewicht von <span>60</span>kg voraussichtlich
+          Mit einer Anwendung von Slimming Gummies® könnten Sie Ihr Zielgewicht von <span
+            id="target-weight-span">60</span>kg voraussichtlich
           in den nächsten
-          <span>70</span> Tagen zwischen dem
-          <span class="body__updated--heading-span">2. Juni 2023</span>
-          und dem <span class="body__updated--heading-span">9. Juni 2023</span> erreichen.
+          <span id="estimated-days">70</span> Tagen zwischen dem
+          <span class="body__updated--heading-span" id="current-date-span">2. Juni 2023</span>
+          und dem <span class="body__updated--heading-span" id="target-date-span">9. Juni 2023</span> erreichen.
         </h2>
         <div class="body__updated--row row">
           <div class="body__updated--col col-6">
             <div class="body__updated--col-img">
-              <img src="/media/male_05.201f1c4d.png" alt="body image">
+              <img src="/media/male_05.201f1c4d.png" alt="body image" class="selected-img" id="current-image">
             </div>
             <div class="body__update--img-title mb-3">
               <p class="body__update--text-from">Jetzt</p>
             </div>
             <p class="body__update--img-subtext subtext-thin">Körperfettanteil</p>
-            <span class="body__update--span-dynamic">17-25%</span>
+            <span class="body__update--span-dynamic" id="bmi">17-25%</span>
           </div>
           <div class="body__updated--col col-6">
             <div class="body__updated--col-img">
-              <img src="/media/male_01.d6f82abd.png" alt="body image">
+              <img src="/media/male_01.d6f82abd.png" alt="body image" id="target-image">
             </div>
             <div class="body__update--img-title mb-3">
               <p class="body__update--text-to">Nach <span>13</span> Tagen</p>
@@ -479,7 +298,8 @@
 
         <div class="body__update--chart-row row">
           <div class="body__update--chart-col col-12">
-            <span class="body__update--chart-date chart-date-left rounded">31. März 2023</span>
+            <span class="body__update--chart-date chart-date-left rounded" id="current-date-in-chart">31. März
+              2023</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="svg-graph" viewBox="25 18 515 272">
               <linearGradient id="a" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0" stop-color="#e74b55" stop-opacity="0.08"></stop>
@@ -502,10 +322,12 @@
                     stroke-width="30"></circle>
                 </g>
                 <g class="lavelSVG"><text x="-259.728" y="830.083" class="svgText cSad chart-text-bold">
-                    <tspan fill="#e74b55">70 kg</tspan>
-                  </text><text x="347.80" class="chart-text-bold" y="1086.85" class="svgText cGreen">
-                    <tspan fill="#222">65 kg</tspan>
-                  </text></g><text transform="rotate(13.553431)" class="svgText" x="260.59555" y="887.11548">
+                    <tspan fill="#e74b55" id="current-weight-tspan-svg" class="">70</tspan> kg
+                  </text>
+                  <text x="347.80" class="chart-text-bold" y="1086.85" class="svgText cGreen">
+                    <tspan fill="#222" id="target-weight-tspan-svg">65</tspan> kg
+                  </text>
+                </g><text transform="rotate(13.553431)" class="svgText" x="260.59555" y="887.11548">
                   <tspan class="chart-text-bold">13 Tage</tspan>
                 </text>
                 <path
@@ -526,7 +348,8 @@
                 d="m 499.07604,219.42504 c -8.50269,0 -15.41796,6.91532 -15.41796,15.41802 0,8.50263 6.91527,15.41598 15.41796,15.41598 8.5027,0 15.41602,-6.91335 15.41602,-15.41598 0,-8.5027 -6.91332,-15.41802 -15.41602,-15.41802 z m 0,1.99999 c 7.4218,0 13.41797,5.99618 13.41797,13.41803 0,7.42178 -5.99617,13.41599 -13.41797,13.41599 -7.42181,0 -13.41796,-5.99421 -13.41796,-13.41599 0,-7.42185 5.99615,-13.41803 13.41796,-13.41803 z m -5.03515,7.68163 a 2.4053976,2.4053976 0 0 0 -2.40625,2.4043 2.4053976,2.4053976 0 0 0 2.40625,2.4062 2.4053976,2.4053976 0 0 0 2.40429,-2.4062 2.4053976,2.4053976 0 0 0 -2.40429,-2.4043 z m 10.07812,0 a 2.4053976,2.4053976 0 0 0 -2.40625,2.4043 2.4053976,2.4053976 0 0 0 2.40625,2.4062 2.4053976,2.4053976 0 0 0 2.40625,-2.4062 2.4053976,2.4053976 0 0 0 -2.40625,-2.4043 z m -10.79492,9.15432 a 1.1124706,1.1124706 0 0 0 -0.8125,1.84758 c 1.60807,1.88623 4.02679,2.96124 6.57422,2.96095 a 1.1124706,1.1124706 0 0 0 0.002,0 c 2.54335,0 4.9554,-1.07824 6.56055,-2.96095 a 1.1125917,1.1125917 0 0 0 -1.69141,-1.44531 c -1.15889,1.35935 -2.95737,2.17923 -4.87109,2.18169 -1.91812,1.5e-4 -3.71969,-0.81966 -4.88086,-2.18169 a 1.1124706,1.1124706 0 0 0 -0.88084,-0.40234 z"
                 fill="#fff"></path>
             </svg>
-            <span class="body__update--chart-date chart-date-right rounded">13. April 2023</span>
+            <span class="body__update--chart-date chart-date-right rounded" id="target-date-in-chart">13. April
+              2023</span>
           </div>
         </div>
       </div>
@@ -676,8 +499,10 @@
     </section>
 
     <!-- Loader -->
-    <div class="loader__container rounded bg-white">
-      <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value: 90"></div>
+    <div class="loader__container rounded bg-white" id="loader">
+      <div role="progressbar-circle" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value: 90">
+        <span class="loader-num" id="loader-counter">0%</span>
+      </div>
       <h3>Bitte warten...</h3>
     </div>
   </main>
@@ -746,7 +571,14 @@
     crossorigin="anonymous"></script>
 
   <!-- Custom JS -->
-  <script src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+    integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/locale/de.min.js"
+    integrity="sha512-vFPzRb4GGRhFsqFObk7WKkfNeutbYyeeFkFRc9XFtMzmltAfF+G9S+cc8EzrrUpBereS+NrKqLbr0a+0lLSuvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="/js/app.js"></script>
 </body>
 
 </html>
