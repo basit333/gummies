@@ -173,8 +173,8 @@
           <div class="body__form--content col-6">
             <label class="d-block" for="weight">Gewicht</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
-                name="weight" id="weight">
+              <input class="body__form--input-1 input__weight rounded-start" maxlength="3" pattern="[0-9]*"
+                type="number" name="weight" id="weight">
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
             <p class="error__msg--weight">Bitte geben Sie Ihr Gewicht ein.</p>
@@ -182,8 +182,8 @@
           <div class="body__form--content col-6">
             <label class="d-block" for="targetWeight">Zielgewicht</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-1 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
-                name="targetWeight" id="targetWeight">
+              <input class="body__form--input-1 input__targetweight rounded-start" maxlength="3" pattern="[0-9]*"
+                type="number" name="targetWeight" id="targetWeight">
               <span class="body__form--input-span rounded-end">kg</span>
             </div>
             <p class="error__msg--targetweight">Bitte geben Sie Ihr Zielgewicht ein.</p>
@@ -191,8 +191,8 @@
           <div class="body__form--content col-12 my-4">
             <label class="d-block" for="targetHeight">Körpergröße</label>
             <div class="body__form--input-box">
-              <input class="body__form--input-2 rounded-start" maxlength="3" pattern="[0-9]*" type="number"
-                name="targetHeight" id="targetHeight">
+              <input class="body__form--input-2 input__targetheight rounded-start" maxlength="3" pattern="[0-9]*"
+                type="number" name="targetHeight" id="targetHeight">
               <span class="body__form--input-span rounded-end">cm</span>
             </div>
             <p class="error__msg--targetheight">Bitte geben Sie eine Zahl ein.</p>
@@ -289,7 +289,7 @@
             <p class="error__msg--select">Bitte Alter wählen...</p>
           </div>
           <div class="body__form--btn-box">
-            <button class="body__form--btn body__form--btn-male rounded">Weiter</button>
+            <button type="submit" class="body__form--btn body__form--btn-male rounded">Weiter</button>
           </div>
         </form>
       </div>
@@ -445,11 +445,12 @@
       </div>
     </section>
 
-    <section class="body__updated--container rounded bg-white mx-auto">
-      <div class="body__updated--wrapper">
+    <section class="body__updated--container mx-auto">
+      <div class="body__updated--wrapper rounded bg-white">
         <h2 class="body__updated--heading">
-          Mit einer Anwendung von Slimming Gummies® könnten Sie Ihr Zielgewicht von 60kg voraussichtlich in den nächsten
-          70 Tagen zwischen dem
+          Mit einer Anwendung von Slimming Gummies® könnten Sie Ihr Zielgewicht von <span>60</span>kg voraussichtlich
+          in den nächsten
+          <span>70</span> Tagen zwischen dem
           <span class="body__updated--heading-span">2. Juni 2023</span>
           und dem <span class="body__updated--heading-span">9. Juni 2023</span> erreichen.
         </h2>
@@ -466,7 +467,7 @@
           </div>
           <div class="body__updated--col col-6">
             <div class="body__updated--col-img">
-              <img src="/media/male_03.63f61f4c.png" alt="body image">
+              <img src="/media/male_01.d6f82abd.png" alt="body image">
             </div>
             <div class="body__update--img-title mb-3">
               <p class="body__update--text-to">Nach <span>13</span> Tagen</p>
@@ -529,7 +530,156 @@
           </div>
         </div>
       </div>
+      <h2 class="body__update--secondary-heading">Ihre persönliche Produktempfehlung</h2>
+      <div class="body__product-ad-row row rounded bg-white">
+        <div class="body__product-ad-col col-6">
+          <img src="/media/gum3.0c190293.png" alt="Gummies">
+        </div>
+        <div class="body__product-ad-col col-6">
+          <h3>Großer Wert</h3>
+          <h4>3 Packungen</h4>
+          <p>Dieses Paket ist nur für Anwender(innen) gedacht, die wirklich ihr Leben verändern möchten.</p>
+          <div class="body__product-ad-price">
+            <p class="body__product-ad-mainprice">36,65 €</p>
+            <div class="body__product-ad-subprice">
+              <p>Preis pro Packung</p>
+              <p>Gesamtpreis 109,95 €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn-mehr rounded">Mehr erfahren</a>
+      <div class="reviews rounded bg-white">
+        <h3 class="reviews-main-title text-center">Bewertungen</h3>
+        <h1 class="reviews-rating text-center">4.7</h1>
+        <div class="reviews__container">
+          <div class="reviews__container--wrapper">
+            <div class="reviews__container--wrapper-left">
+              <h3>Katrin Burger</h3>
+              <div class="reviews__stars">
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+              </div>
+            </div>
+            <div class="reviews__container--wrapper-right">
+              <span class="reviews-date">Am 20.02.2023</span>
+              <span class="reviews-badge">VERIFIZIERTER KAUF</span>
+            </div>
+          </div>
+          <p>Schnelle Lieferung.</p>
+        </div>
+
+        <div class="reviews__container">
+          <div class="reviews__container--wrapper">
+            <div class="reviews__container--wrapper-left">
+              <h3>Petra Fuerst</h3>
+              <div class="reviews__stars">
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+              </div>
+            </div>
+            <div class="reviews__container--wrapper-right">
+              <span class="reviews-date">Am 20.02.2023</span>
+              <span class="reviews-badge">VERIFIZIERTER KAUF</span>
+            </div>
+          </div>
+          <p>Muss mich den anderen anschliessen: ist gut gegen Heisshunger. Würde noch einmal bestellen.</p>
+        </div>
+
+        <div class="reviews__container">
+          <div class="reviews__container--wrapper">
+            <div class="reviews__container--wrapper-left">
+              <h3>Jennifer Lang</h3>
+              <div class="reviews__stars">
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#d69e23"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+                <svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-12fcras" style="">
+                  <path fill="#cbd5e0"
+                    d="M23.555,8.729a1.505,1.505,0,0,0-1.406-.98H16.062a.5.5,0,0,1-.472-.334L13.405,1.222a1.5,1.5,0,0,0-2.81,0l-.005.016L8.41,7.415a.5.5,0,0,1-.471.334H1.85A1.5,1.5,0,0,0,.887,10.4l5.184,4.3a.5.5,0,0,1,.155.543L4.048,21.774a1.5,1.5,0,0,0,2.31,1.684l5.346-3.92a.5.5,0,0,1,.591,0l5.344,3.919a1.5,1.5,0,0,0,2.312-1.683l-2.178-6.535a.5.5,0,0,1,.155-.543l5.194-4.306A1.5,1.5,0,0,0,23.555,8.729Z"
+                    style=""></path>
+                </svg>
+              </div>
+            </div>
+            <div class="reviews__container--wrapper-right">
+              <span class="reviews-date">Am 18.02.2023</span>
+              <span class="reviews-badge">VERIFIZIERTER KAUF</span>
+            </div>
+          </div>
+          <p>Alles prima</p>
+        </div>
+      </div>
+      <a href="#" class="btn-mehr rounded">Mehr erfahren</a>
     </section>
+
+    <!-- Loader -->
+    <div class="loader__container rounded bg-white">
+      <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value: 90"></div>
+      <h3>Bitte warten...</h3>
+    </div>
   </main>
 
   <!-- Footer -->
