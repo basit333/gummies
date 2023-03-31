@@ -218,6 +218,7 @@ DOMElements.form.element.addEventListener("submit", function (event) {
   }
 
   if (!hasErrors) {
+    // estimatedDays code goes here
     // const estimatedDays = estimateDaysToTargetWeight(currentWeight, targetWeight, 180, 24, true, 1);
 
     /**
