@@ -43,6 +43,7 @@ const DOMElements = {
   currentWeightTspanSvg: document.querySelector("#current-weight-tspan-svg"),
   targetWeightTspanSvg: document.querySelector("#target-weight-tspan-svg"),
   estimateDaysTspan: document.querySelector("#estimate-days-tspan"),
+  bodyUpdateTextToSpan: document.querySelector(".body__update--text-to span"),
 
   form: {
     section: document.querySelector("#form"),
@@ -83,7 +84,7 @@ const DOMHelpers = {
 
     const images = assets[gender];
 
-    DOMElements.sliderImage.setAttribute("src", `/media/${images[bodyType]}`);
+    DOMElements.sliderImage.setAttribute("src", `./media/${images[bodyType]}`);
     DOMElements.sliderSection.style.display = "block";
   },
   hideSliderSection: function () {
@@ -100,8 +101,8 @@ const DOMHelpers = {
 
     const images = assets[values.gender];
 
-    DOMElements.result.targetImage.setAttribute("src", `/media/${images[0]}`);
-    DOMElements.result.currentImage.setAttribute("src", `/media/${images[values.bodyType]}`);
+    DOMElements.result.targetImage.setAttribute("src", `./media/${images[0]}`);
+    DOMElements.result.currentImage.setAttribute("src", `./media/${images[values.bodyType]}`);
 
     DOMElements.result.bmi.textContent = bmis[values.bodyType];
     DOMElements.result.targetWeight.textContent = values.targetWeight;
@@ -168,7 +169,7 @@ DOMElements.femaleBtn.addEventListener("click", function () {
 DOMElements.sliderRange.addEventListener("input", function () {
   values.bodyType = this.value;
   const images = assets[values.gender];
-  DOMElements.sliderImage.setAttribute("src", `/media/${images[values.bodyType]}`);
+  DOMElements.sliderImage.setAttribute("src", `./media/${images[values.bodyType]}`);
   DOMHelpers.hideSwipeHandMale();
 });
 
@@ -229,6 +230,7 @@ DOMElements.form.element.addEventListener("submit", function (event) {
     values.targetDate = values.currentDate.add(estimatedDays, "day"); // replace 40 with "estimatedDays" variable
     values.estimatedDays = estimatedDays;
     DOMElements.estimateDaysTspan.textContent = estimatedDays;
+    DOMElements.bodyUpdateTextToSpan.textContent = estimatedDays;
 
     DOMHelpers.showLoader();
     DOMHelpers.hideFormSection();

@@ -32,7 +32,7 @@ body {
 
 .hero__row {
   padding: 170px 0;
-  background: url(/media/gummies-desktop.bd6e30a8.jpg) center / cover no-repeat;
+  background: url(../media/gummies-desktop.bd6e30a8.jpg) center / cover no-repeat;
 }
 
 .hero__content--heading {
@@ -1250,7 +1250,7 @@ input[type="range"]::-ms-fill-upper {
 
   .hero__row {
     padding: 170px 0;
-    background: url(/media/gummies-mobile.a9859f23.jpg) bottom / cover no-repeat;
+    background: url(../media/gummies-mobile.a9859f23.jpg) bottom / cover no-repeat;
     z-index: -1;
   }
 
@@ -1331,6 +1331,17 @@ input[type="range"]::-ms-fill-upper {
   }
 }
 
+@media screen and (max-width: 545px) {
+  .error__msg--weight,
+  .error__msg--targetweight,
+  .error__msg--targetheight,
+  .error__msg--select {
+    font-size: 12px;
+    line-height: 12px;
+    bottom: -32px;
+  }
+}
+
 @media screen and (max-width: 537px) {
   .hero__row {
     padding: 100px 0;
@@ -1338,6 +1349,16 @@ input[type="range"]::-ms-fill-upper {
 
   .hero__content--heading {
     padding-inline: 0;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .error__msg--weight,
+  .error__msg--targetweight,
+  .error__msg--targetheight,
+  .error__msg--select {
+    font-size: 10px;
+    line-height: 10px;
   }
 }
 
@@ -1350,5 +1371,20 @@ input[type="range"]::-ms-fill-upper {
   .page__text--content h2 {
     font-size: 22px;
     line-height: 30px;
+  }
+
+  .body__update--img-title p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .error__msg--weight,
+  .error__msg--targetweight,
+  .error__msg--targetheight,
+  .error__msg--select {
+    font-size: 8px;
+    line-height: 8px;
   }
 }
